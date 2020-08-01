@@ -85,6 +85,7 @@
 	aspellDicts.en
 	git
 	googler
+	jfbview
 	lynx
 	man-pages
 	python3
