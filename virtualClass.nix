@@ -7,8 +7,8 @@
 	./environments/networking.nix
   ];
 
-  environment.systemPackage = with pkgs; [
-	google-chrome nautilus
+  environment.systemPackages = with pkgs; [
+	gnome3.nautilus google-chrome
   ];
 
 }

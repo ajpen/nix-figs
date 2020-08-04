@@ -1,11 +1,13 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
+
+with lib;
 
 {
   imports = [
 	./environments/base.nix
   ];
 
-  environment.systemPackage = with pkgs; [
+  environment.systemPackages = with pkgs; [
 	mpv mplayer fbida
   ];
 }

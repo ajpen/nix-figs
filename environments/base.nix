@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib,  pkgs, ... }:
 
 
 ### Installation & Booting ###########
@@ -26,7 +26,7 @@
   # disk encryption with luks
   boot.initrd.luks.devices = {
     crypted = {
-      device = "/dev/disk/by-uuid/change_to_uuid_specific_to_device";
+      device = "/dev/disk/by-uuid/c6793bb6-0dd0-4cb6-b171-4c802e2c862d";
       preLVM = true;
     };
   };
@@ -57,12 +57,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-    font = "latarcyrheb-sun32";
     keyMap = "us";
   };
 
   # Sets up fonts and stuff early
-  boot.earlyVconsoleSetup = true;
+  console.earlySetup = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";

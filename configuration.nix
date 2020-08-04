@@ -3,6 +3,6 @@
 {
   imports = [
 	./study.nix
-	./environment/networking.nix
+	./environments/networking.nix
   ];
 }

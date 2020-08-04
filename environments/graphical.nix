@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
+
 {
-  config = {
 
     # Set up DWM
     nixpkgs.config.packageOverrides = pkgs: {
@@ -14,30 +14,30 @@
      };
 
     # GUI packages
-    environment.systemPackages = [
+    environment.systemPackages = with pkgs; [
 	  dwm dmenu arandr rxvt_unicode 
     ];
 
-	# Enable sound.
-	sound.enable = true;
-	hardware.pulseaudio.enable = true;
+    # Enable sound.
+    sound.enable = true;
+    hardware.pulseaudio.enable = true;
   
-	# Enable X11
-	services.xserver.enable = true;
+    # Enable X11
+    services.xserver.enable = true;
 
-	# Enable touchpad support.
-	services.xserver.libinput.enable = true;
+    # Enable touchpad support.
+    services.xserver.libinput.enable = true;
 
-	services.xserver.displayManager.lightdm.enable = true;
+    services.xserver.displayManager.lightdm.enable = true;
 
-	# setup session for dwm
+    # setup session for dwm
     services.xserver.desktopManager.session =
 	  [{ 
 	    name = "dwm";
 	    start = ''
+	      feh --bg-scale /home/anfernee/Pictures/vaporwstore.jpg
 	      /run/current-system/sw/bin/dwm &
 	      waitPID=$!
 	    '';
-	  }];  
-  };
+	  }];
 }
