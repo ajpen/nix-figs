@@ -67,8 +67,8 @@
   time.timeZone = "America/New_York";
 
   # Use KmsCon on TTYs
-  services.kmscon.enable = true;
-  services.kmscon.hwRender = true;
+  # services.kmscon.enable = true;
+  # services.kmscon.hwRender = true;
   # services.kmscon.extraConfig = "font-size=14";
 
 ################################################################################
@@ -82,6 +82,7 @@
   environment.systemPackages = with pkgs; [ 
 	aspell
 	aspellDicts.en
+	fbterm
 	git
 	googler
 	jfbview
@@ -117,6 +118,10 @@
   # Autoclean unused docker elements
   virtualisation.docker.autoPrune.enable = true;
 
+  # enable Bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
 
 ##### Environment ###########
   environment.variables.EDITOR = "vim";
@@ -133,7 +138,7 @@
   users.users.anfernee = {
     isNormalUser = true;
 	initialPassword = "toortoor";
-    extraGroups = [ "docker" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "docker" "video" ];
   };
 
 #############################################################################

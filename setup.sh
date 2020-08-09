@@ -5,7 +5,7 @@
 for config in ./*.nix; 
 do
 	if [ $config == "./configuration.nix" ]; then
-		nixos-rebuild boot
+		echo "ignoring configuration.nix"
 	else
 		pname=${config%.*}
 		pname=${pname//.}
@@ -13,3 +13,6 @@ do
 		nixos-rebuild boot -p $pname -I nixos-config=$config
 	fi
 done
+
+# Finally, build the default config
+nixos-rebuild boot

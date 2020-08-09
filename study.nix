@@ -10,4 +10,6 @@ with lib;
   environment.systemPackages = with pkgs; [
 	mpv mplayer fbida
   ];
+
+  services.xserver.enable = false;
 }

@@ -15,7 +15,7 @@
 
     # GUI packages
     environment.systemPackages = with pkgs; [
-	  dwm dmenu arandr rxvt_unicode 
+	  dwm dmenu arandr rxvt_unicode feh
     ];
 
     # Enable sound.
@@ -35,7 +35,11 @@
 	  [{ 
 	    name = "dwm";
 	    start = ''
-	      feh --bg-scale /home/anfernee/Pictures/vaporwstore.jpg
+              # fixes issues with Jetbrains applications
+              #export _JAVA_AWT_WM_NONREPARENTING=1
+              #export AWT_TOOLKIT=MToolkit
+	      #wmname LG3D
+	      feh --bg-scale /etc/nixos/addons/wallpapers/default.jpg
 	      /run/current-system/sw/bin/dwm &
 	      waitPID=$!
 	    '';
