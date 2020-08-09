@@ -122,6 +122,8 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # enable autorandr
+  services.autorandr.enable = true;
 
 ##### Environment ###########
   environment.variables.EDITOR = "vim";
