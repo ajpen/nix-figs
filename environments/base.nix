@@ -125,6 +125,10 @@
   # enable autorandr
   services.autorandr.enable = true;
 
+  # avahi for printing, raspberry pi nano discovery
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+
 ##### Environment ###########
   environment.variables.EDITOR = "vim";
 
@@ -140,7 +144,7 @@
   users.users.anfernee = {
     isNormalUser = true;
 	initialPassword = "toortoor";
-    extraGroups = [ "docker" "video" ];
+    extraGroups = [ "docker" "video" "plugdev" "dialout" ];
   };
 
 #############################################################################

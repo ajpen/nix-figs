@@ -8,7 +8,7 @@ with lib;
   ];
 
   environment.systemPackages = with pkgs; [
-	mpv mplayer fbida
+	mpv mplayer fbida okular 
   ];
 
   services.xserver.enable = false;
