@@ -129,6 +129,11 @@
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
 
+  # Enable usb automounting
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+
 ##### Environment ###########
   environment.variables.EDITOR = "vim";
 
