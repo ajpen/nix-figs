@@ -134,6 +134,10 @@
   services.udisks2.enable = true;
   services.devmon.enable = true;
 
+
+  # TLP for saving battery on laptops
+  services.tlp.enable = true;
+
 ##### Environment ###########
   environment.variables.EDITOR = "vim";
 
