@@ -13,9 +13,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
-  hardware.cpu.intel.updateMicrocode = true;
-  
+
   # grub
   boot.loader.grub = {
     enable = true;
@@ -38,15 +36,15 @@
   boot.kernelModules = [ "kvm-intel" ];
   
   # Kernel parameters for XPS 13. May not be necessary
-  #boot.kernelParams = [ 
-  # "pcie.aspm=force"
-  # "i915.enable_fbc=1"
-  # "i915.enable_rc6=7"
-  # "i915.lvds_downclock=1"
-  # "i915.enable_guc_loading=1"
-  # "i915.enable_guc_submission=1"
-  # "i915.enable_psr=0"
-  #];
+  boot.kernelParams = [ 
+    "pcie.aspm=force"
+    "i915.enable_fbc=1"
+    "i915.enable_rc6=7"
+    "i915.lvds_downclock=1"
+    "i915.enable_guc_loading=1"
+    "i915.enable_guc_submission=1"
+    "i915.enable_psr=0"
+  ];
 
   # More kernel options. 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -82,6 +80,7 @@
 
   # System packages
   environment.systemPackages = with pkgs; [ 
+	anki
 	aspell
 	aspellDicts.en
 	fbterm
@@ -90,6 +89,7 @@
 	jfbview
 	lynx
 	man-pages
+	pdftk
 	python3
 	screen
 	tmux
@@ -135,10 +135,6 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.devmon.enable = true;
-
-
-  # TLP for saving battery on laptops
-  services.tlp.enable = true;
 
 ##### Environment ###########
   environment.variables.EDITOR = "vim";

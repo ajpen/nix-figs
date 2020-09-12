@@ -16,3 +16,5 @@ done
 
 # Finally, build the default config
 nixos-rebuild boot
+
+echo "Don't forget to cleanup if all is well"

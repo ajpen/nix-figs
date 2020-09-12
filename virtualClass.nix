@@ -8,7 +8,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-	gnome3.nautilus google-chrome
+	gnome3.nautilus google-chrome zoom-us
   ];
 
 }
