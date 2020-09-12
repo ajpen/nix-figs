@@ -37,17 +37,6 @@
   
   # enable kernel based virtual machine
   boot.kernelModules = [ "kvm-intel" ];
-  
-  # Kernel parameters for XPS 13. May not be necessary
-  boot.kernelParams = [ 
-    "pcie.aspm=force"
-    "i915.enable_fbc=1"
-    "i915.enable_rc6=7"
-    "i915.lvds_downclock=1"
-    "i915.enable_guc_loading=1"
-    "i915.enable_guc_submission=1"
-    "i915.enable_psr=0"
-  ];
 
   # More kernel options. 
   boot.kernelPackages = pkgs.linuxPackages_latest;
