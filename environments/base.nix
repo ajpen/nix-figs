@@ -127,6 +127,9 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # TLP for saving battery on laptops
+  services.tlp.enable = true;
+
   # enable autorandr
   services.autorandr.enable = true;
 
