@@ -75,6 +75,7 @@
 	anki
 	aspell
 	aspellDicts.en
+	evince
 	fbterm
 	git
 	googler
