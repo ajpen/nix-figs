@@ -9,7 +9,5 @@ with lib;
   ];
 
   environment.systemPackages = with pkgs; [
-    jetbrains.webstorm
-    jetbrains.pycharm-professional
   ];
 }

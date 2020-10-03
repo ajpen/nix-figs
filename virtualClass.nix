@@ -8,7 +8,11 @@
   ];
 
   environment.systemPackages = with pkgs; [
-	gnome3.nautilus google-chrome zoom-us
+ 	jetbrains.pycharm-professional
+	jetbrains.webstorm
+	gnome3.nautilus 
+	google-chrome 
+	zoom-us
   ];
 
 }
